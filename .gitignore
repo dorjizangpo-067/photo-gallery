@@ -37,3 +37,6 @@ Thumbs.db
 
 # Backup files
 *~
+# Ignore media directory where images, files, etc. are stored
+/media/
+/proflie_picture/
