@@ -9,14 +9,13 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
-class Photos(models.Model):
+class Post(models.Model):
     CATEGORY_CHOICES = [
         ('nature', 'Nature'),
         ('travel', 'Travel'),
         ('animals', 'Animals'),
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    header = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     photo = models.ImageField(upload_to='photos/')
     upload_time = models.DateTimeField(auto_now_add=True)

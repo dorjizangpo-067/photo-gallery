@@ -1,0 +1,40 @@
+{% extends "app/layout.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+{% load static %}
+<main>
+    <section class="container">
+        <!-- new post -->
+        {% for post in posts %}
+        <div class="post-card">
+            <div class="post-header">
+                <div class="left">
+                    <div class="post__image-container">
+                        <img src="{% static '/media/'%}/{{ request.user.profile_picture }}" alt="Profile">
+                    </div>
+                    <p>
+                        <strong>{{ request.user.username }}</strong>
+                    </p>
+                </div>
+                <div class="right">
+                    <small>{{ post.update_time }}</small>
+                </div>
+            </div>
+            <div class="post-body">
+                <div class="post-text">
+                    <p>{{ post.description }}</p>
+                    <button class="see-more">See more</button>
+                </div>
+                <div class="post-image">
+                    <img src="{% static '/media/'%}/{{ post.photo }}" alt="{{ post.photo }}">
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <h1 class='orange' style="text-align: center;">---No Post</h1>
+        {% endfor %}
+    </section>
+</main>
+{% endblock body %}

@@ -5,6 +5,7 @@
 __pycache__/
 *.pyo
 *.pyd
+base/app/static/media/*
 
 # Django-related
 *.log
