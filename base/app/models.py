@@ -6,6 +6,7 @@ from django.db import models
 class User(AbstractUser):
     profile_picture = models.ImageField(upload_to='proflie_picture', null=False, blank=False)
     quote = models.TextField(blank=False, null=False)
+    logo = models.ImageField(upload_to='proflie_picture', null=True, blank=True)
     def __str__(self):
         return self.username
 
@@ -31,4 +32,4 @@ class Post(models.Model):
         ordering = ['-upload_time']
     
     def __str__(self):
-        return self.header
+        return self.description

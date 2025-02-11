@@ -99,9 +99,10 @@ a, li{
     overflow: hidden;
 }
 .hero-img img{
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
-    /* height: 100%; */
 }
 
 .social-media-icons{
@@ -174,7 +175,7 @@ nav{
 }
 .nav-links li a,
 .mobile-nav-links li a{
-    color: var(--dark-color);
+    color: #1c272c;
     font-size: 1.2rem;
     padding: 1px 3px;
     transition: color 0.3s ease-in-out;
@@ -266,6 +267,7 @@ nav{
     justify-content: center;
 }
 .post-image img{
+    max-height: 400px;
     object-position: center;
     object-fit: contain;
     cursor: pointer;
@@ -348,6 +350,7 @@ footer{
     .post-card{
         max-width: 80%;
         margin-top: 60px;
+        margin-top: 0.5rem;
     }
     .hero-img {
         margin-right: 0;
@@ -362,6 +365,7 @@ footer{
 @media (max-width: 560px){
     .post-card{
         max-width: 90%;
+        margin-top: 0.5rem;
     }
 }
 @media (max-width: 460px){
@@ -377,6 +381,7 @@ footer{
     }
     .post-card{
         max-width: 100%;
+        margin-top: 0.5rem;
     }
 }
 @media (min-width: 411px) {
@@ -385,6 +390,9 @@ footer{
     }
 }
 @media (max-width: 410px){
+    .post-card{
+        margin-top: 0.5rem;
+    }
     button.opened{
         z-index: 999;
     }
@@ -414,7 +422,6 @@ footer{
     button.opened + .mobile-nav-links{
         display: flex;
     }
-
 }
 
 /* hamburger */
@@ -489,12 +496,16 @@ footer{
     align-items: center;
 }
 
+/* .modal img {
+    max-width: 100%;
+    object-fit: contain;
+} */
 .modal img {
     max-width: 100%;
-    /* max-height: 100%; */
+    max-height: 100vh;
     object-fit: contain;
+    overflow: hidden;
 }
-
 .close-button {
     position: absolute;
     top: 50px;

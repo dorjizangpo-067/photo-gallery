@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% comment %} <link rel="icon" href="medialogo.jpg" type="image/x-icon"> {% endcomment %}
+    <link rel="icon" href="{{ user.logo.url }}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
@@ -16,8 +16,8 @@
                 &amp; <br>
                 <span class="yellow" >Photography</span>.</h1>
             <div class="texts">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi rerum sit, hic deserunt dicta? adipisicing elit. Alias animi rerum sit, hic deserunt dicta?</p>
-                <a href="#" class="hero__contract-us">Contract Us</a>
+                <p>{{ user.quote }}</p>
+                <a href="mailto:201.00129.12.0017@education.gov.bt" class="hero__contract-us">Contract Us</a>
             </div>
             <div class="social-media-icons">
                 <a href="#" target="_blank">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="hero-img">
-            <img src="{% static '/media/'%}/{{ request.user.profile_picture }}" alt="Profile">
+            <img src="{{ user.profile_picture.url }}" alt="Profile">
         </div>
     </section>
     <!-- Nav Bar -->
@@ -54,16 +54,16 @@
             </button>
             <ul class="mobile-nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Gallary</a></li>
+                <li><a href="#" >Gallary</a></li>
                 <li><a href="#">About US</a></li>
-                <li><a href="#">Contract Us</a></li>
+                <li><a href="mailto:201.00129.12.0017@education.gov.bt">Contract Us</a></li>
             </ul>
         </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Gallary</a></li>
             <li><a href="#">About US</a></li>
-            <li><a href="#">Contract Us</a></li>
+            <li><a href="mailto:201.00129.12.0017@education.gov.bt">Contract Us</a></li>
         </ul>
     </nav>
 
@@ -73,7 +73,7 @@
         <img id="fullImage" src="" alt="Full Image">
     </div>
     <footer>
-        <p>&copy; <span class="year">2025</span> Your Company Name. All rights reserved.</p>
+        <p>&copy; <span class="year">2025 </span> Yoesel <span class="orange">Video</span> &amp; <span class="yellow">Photography</span></p>
     </footer>
 
     <script src="{% static 'js/script.js' %}"></script>
